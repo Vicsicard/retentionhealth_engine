@@ -1,0 +1,27 @@
+{
+  "name": "retentionhealth-engine",
+  "version": "1.0.0",
+  "description": "Retention Health V1 - GLP-1 Patient Retention Engine",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "db:create": "wrangler d1 create retentionhealth_v1",
+    "db:schema": "wrangler d1 execute retentionhealth_v1 --file=./schema.sql",
+    "db:seed": "wrangler d1 execute retentionhealth_v1 --file=./seed.sql"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "retention",
+    "health"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240129.0",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.22.1"
+  }
+}
