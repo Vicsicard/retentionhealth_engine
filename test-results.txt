@@ -1,0 +1,37 @@
+# PRODUCTION DEPLOYMENT - ISOLATION TEST RESULTS
+
+## Test Clinic B Credentials:
+- Clinic ID: clinic_1772462153271_7yjdaq0
+- API Key: 5qQdXm7lvDRWzixFhEC4QGuGYfKh2QzaQHZhPJXA3c0
+
+## TEST 1: Valid Clinic Credentials ✅ PASS
+- Status: 200 OK
+- Clinic B successfully submitted metrics with valid credentials
+
+## TEST 2: Wrong API Key ✅ PASS
+- Status: 401 Unauthorized
+- Error: "Invalid clinic credentials"
+- Correctly rejected wrong API key
+
+## TEST 3: Cross-Clinic Access (Pending - need Clinic A)
+- Need to create Clinic A to test if Clinic B can access Clinic A's data
+
+## TEST 4: Dashboard Isolation (Pending - need Clinic A)
+- Need to verify Clinic B can only view its own dashboard
+
+## ADMIN_KEY:
+rh_pilot_admin_2026_secure_key_v1
+
+## DEPLOYMENT STATUS:
+✅ Schema deployed (cohort-only)
+✅ Worker deployed (Version: dcf76510-648a-4ac0-8f46-8f15803ead26)
+✅ ADMIN_KEY secret set
+✅ Test Clinic B created
+✅ Per-clinic auth working
+✅ Invalid credentials rejected
+
+## NEXT STEPS:
+1. Create Test Clinic A
+2. Run cross-clinic isolation tests
+3. Test pilot_status enforcement
+4. Document final GO/NO-GO decision
