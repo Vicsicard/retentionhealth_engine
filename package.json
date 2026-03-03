@@ -10,7 +10,7 @@
     "db:create": "wrangler d1 create retentionhealth_v1",
     "db:schema": "wrangler d1 execute retentionhealth_v1 --file=./schema.sql",
     "db:seed": "wrangler d1 execute retentionhealth_v1 --file=./seed.sql",
-    "build": "cd frontend && npm install && npx next build"
+    "build": "cd frontend && npm install && npm run build"
   },
   "keywords": [
     "cloudflare",

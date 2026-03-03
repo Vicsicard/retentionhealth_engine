@@ -6,11 +6,6 @@ const nextConfig = {
     unoptimized: true, // Required for static export
   },
   trailingSlash: true, // Helps with Cloudflare Pages routing
-  experimental: {
-    turbo: {
-      root: __dirname,
-    },
-  },
 };
 
 module.exports = nextConfig;
