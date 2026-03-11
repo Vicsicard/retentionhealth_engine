@@ -3,51 +3,15 @@
 import { useState } from "react";
 import PilotNav from "@/components/PilotNav";
 import Footer from "@/components/Footer";
+import PilotApplicationModal from "@/components/PilotApplicationModal";
 import { TrendingDown, MessageSquare, RefreshCw, AlertTriangle, Target, CheckCircle, Users, DollarSign } from "lucide-react";
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    clinicName: "",
-    contactName: "",
-    email: "",
-    phone: "",
-    activePatients: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError("");
-
-    try {
-      const response = await fetch("/api/pilot-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) throw new Error("Failed to submit");
-
-      setIsSubmitted(true);
-      setFormData({
-        clinicName: "",
-        contactName: "",
-        email: "",
-        phone: "",
-        activePatients: "",
-      });
-    } catch (err) {
-      setError("Failed to submit. Please email contact@retentionhealth.com");
-    } finally {
-      setIsSubmitting(false);
-    }
-  }
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="bg-white">
+      <PilotApplicationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <PilotNav />
       
       {/* HERO */}
@@ -685,116 +649,34 @@ export default function Home() {
       <section id="apply" className="py-20 bg-white px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold text-slate-900 mb-6 text-center">
-            Apply for the 8-Week Pilot
+            Apply for the Pilot Cohort
           </h2>
 
-          {!isSubmitted ? (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label className="block text-sm font-semibold text-slate-800 mb-2">
-                  Clinic Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.clinicName}
-                  onChange={(e) => setFormData({ ...formData, clinicName: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
+          <div className="bg-blue-50 border-2 border-blue-200 rounded-lg p-6 mb-8">
+            <p className="text-lg font-bold text-blue-900 mb-2 text-center">
+              Pilot Cohort
+            </p>
+            <p className="text-gray-700 text-center">
+              Limited to 6 Clinics for Initial Validation
+            </p>
+          </div>
 
-              <div>
-                <label className="block text-sm font-semibold text-slate-800 mb-2">
-                  Contact Name
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.contactName}
-                  onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
+          <p className="text-gray-700 mb-8 text-center text-lg">
+            Check your clinic&apos;s eligibility for the 8-week stabilization pilot.
+          </p>
 
-              <div>
-                <label className="block text-sm font-semibold text-slate-800 mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
+          <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 text-lg shadow-md"
+            >
+              Apply for Pilot Cohort
+            </button>
+          </div>
 
-              <div>
-                <label className="block text-sm font-semibold text-slate-800 mb-2">
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-slate-800 mb-2">
-                  Active GLP-1 Patient Range
-                </label>
-                <select
-                  required
-                  value={formData.activePatients}
-                  onChange={(e) => setFormData({ ...formData, activePatients: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                >
-                  <option value="">Select range</option>
-                  <option value="50-100">50-100</option>
-                  <option value="100-200">100-200</option>
-                  <option value="200-500">200-500</option>
-                  <option value="500+">500+</option>
-                </select>
-              </div>
-
-              {error && (
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg text-red-600">
-                  {error}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-lg"
-              >
-                {isSubmitting ? "Submitting..." : "Request Pilot Access"}
-              </button>
-
-              <div className="text-center space-y-2">
-                <p className="text-sm text-gray-600">Spots limited to 6 clinics.</p>
-                <p className="text-sm text-gray-500">Applications reviewed within 48 hours.</p>
-                <p className="text-sm text-gray-500">
-                  No PHI collected. No EMR integration. No long-term contract required during pilot.
-                </p>
-              </div>
-            </form>
-          ) : (
-            <div className="text-center py-12">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="w-10 h-10 text-green-600" />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                Application Received
-              </h3>
-              <p className="text-lg text-gray-700">
-                Thank you. We'll review your application and reach out within 48 hours.
-              </p>
-            </div>
-          )}
+          <p className="text-sm text-gray-500 text-center">
+            Takes about 20 seconds • Applications reviewed within 48 hours
+          </p>
         </div>
       </section>
 
