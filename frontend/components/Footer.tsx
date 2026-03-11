@@ -49,7 +49,7 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <strong>Address:</strong> 302 Arapahoe Ave, Boulder, CO 80302
+                <strong>Address:</strong> Boulder, CO 80302
               </p>
             </div>
             
