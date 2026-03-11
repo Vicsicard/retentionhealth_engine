@@ -54,8 +54,11 @@ export default function Home() {
       <section className="bg-gradient-to-b from-white to-gray-50 pt-32 pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Reduce 60-Day GLP-1 Drop-Off — Measurably.
+            Stabilize Patients During Treatment Ramp-Up — Measurably.
           </h1>
+          <p className="text-xl sm:text-2xl text-gray-700 mb-2">
+            Validated for GLP-1 programs.
+          </p>
           <p className="text-xl sm:text-2xl text-gray-700 mb-4">
             8-week stabilization pilot for owner-led clinics.
           </p>
@@ -66,7 +69,7 @@ export default function Home() {
             No Protected Health Information (PHI) collected or stored during pilot.
           </p>
           <p className="text-lg text-gray-600 mb-4">
-            No Business Associate Agreement (BAA) required during pilot participation.
+            Because the pilot does not collect Protected Health Information (PHI), a Business Associate Agreement (BAA) is not required during pilot participation.
           </p>
           <p className="text-base text-gray-500 mb-10">
             Structured retention validation for GLP-1 programs.
@@ -80,6 +83,23 @@ export default function Home() {
             </a>
           </div>
           <p className="text-sm text-gray-500 mt-6">Limited to 6 owner-led clinics.</p>
+        </div>
+      </section>
+
+      <div className="h-px bg-gray-200"></div>
+
+      {/* MARKET CONTEXT */}
+      <section className="py-16 bg-white px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            The Market Context
+          </h2>
+          <p className="text-lg text-gray-700 mb-4 text-center">
+            GLP-1 therapies now serve <strong>15M+ patients</strong> in the United States, across <strong>75,000–125,000</strong> medical weight-loss and longevity clinics.
+          </p>
+          <p className="text-lg text-gray-700 text-center">
+            Early-phase patient instability is emerging as one of the most common operational challenges during treatment ramp-up.
+          </p>
         </div>
       </section>
 
@@ -174,10 +194,13 @@ export default function Home() {
                 <p className="text-xl font-semibold text-gray-900 mb-4">
                   A 10% reduction in drop-off retains 12 patients and protects:
                 </p>
-                <p className="text-5xl font-bold text-blue-600 mb-4">
+                <p className="text-5xl font-bold text-blue-600 mb-2">
                   $7,200
                 </p>
-                <p className="text-lg text-gray-700 mb-8">in monthly recurring revenue</p>
+                <p className="text-lg text-gray-700 mb-2">preserved monthly revenue</p>
+                <p className="text-base text-gray-600 mb-8">
+                  Equivalent to approximately <strong>$86,400</strong> in annualized patient value.
+                </p>
                 
                 <div className="bg-white p-6 rounded-lg border border-blue-200">
                   <p className="text-lg font-semibold text-gray-900 mb-3">
@@ -263,7 +286,7 @@ export default function Home() {
           </div>
 
           <p className="text-center text-xl text-slate-900 font-bold mt-16">
-            Everything is measured. Nothing is assumed.
+            All results are measured against your existing workflow baseline.
           </p>
         </div>
       </section>
@@ -284,8 +307,24 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-3">Side-by-Side Patient Groups</h3>
-                <p className="text-gray-700 text-lg">
-                  You track two groups simultaneously: <strong>Existing workflow</strong> and <strong>Reinforced stabilization</strong>.
+                <p className="text-gray-700 text-lg mb-4">
+                  You track two patient groups simultaneously.
+                </p>
+                
+                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-3">
+                  <p className="font-semibold text-slate-900 mb-2">Existing Workflow Group</p>
+                  <p className="text-gray-700">Patients receive your clinic's normal onboarding and follow-up process.</p>
+                  <p className="text-gray-600 text-sm mt-1 italic">No changes to your current operations.</p>
+                </div>
+                
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <p className="font-semibold text-slate-900 mb-2">Stabilization Group</p>
+                  <p className="text-gray-700 mb-2">Patients receive access to the RetentionHealth behavioral guidance interface designed to support the treatment ramp-up phase.</p>
+                  <p className="text-gray-600 text-sm italic">Delivered via a secure SMS link — no app download required.</p>
+                </div>
+                
+                <p className="text-gray-700 text-lg mt-4">
+                  The pilot measures whether the stabilization layer improves retention and reduces support burden compared to your existing workflow.
                 </p>
               </div>
             </div>
@@ -305,6 +344,9 @@ export default function Home() {
                 </ul>
                 <p className="text-sm text-gray-600 italic mt-4">
                   Submission takes approximately 5 minutes per week.
+                </p>
+                <p className="text-sm text-gray-600 mt-2">
+                  No patient identifiers are submitted. Clinics report simple aggregated counts.
                 </p>
               </div>
             </div>
@@ -343,7 +385,106 @@ export default function Home() {
           <div className="mt-16 text-center">
             <div className="inline-block bg-blue-50 border-2 border-blue-200 rounded-lg p-6">
               <p className="text-lg font-semibold text-slate-900">
-                No speculation. Only measurable delta.
+                All results are measured against your existing workflow baseline.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="h-px bg-gray-200"></div>
+
+      {/* PILOT TIMELINE */}
+      <section className="py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold text-slate-900 mb-6 text-center">
+            What the 8-Week Pilot Actually Looks Like
+          </h2>
+          <p className="text-xl text-gray-700 mb-4 text-center">
+            The pilot is intentionally lightweight.
+          </p>
+          <p className="text-xl text-gray-700 mb-16 text-center">
+            Most clinics spend less than 10 minutes per week participating.
+          </p>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {/* Week 0 */}
+            <div className="border-l-4 border-blue-600 bg-gray-50 p-6 rounded-r-lg">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
+                Week 0 — Setup (≈15 minutes)
+              </h3>
+              <p className="text-gray-700 mb-3">
+                Clinic receives pilot onboarding link and demo credentials.
+              </p>
+              <p className="text-gray-700 mb-3">
+                You assign patients to two groups using your existing workflow:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 mb-3 ml-4">
+                <li>Existing workflow group</li>
+                <li>Stabilization group</li>
+              </ul>
+              <p className="text-gray-600 text-sm">
+                No EMR integration. No workflow changes required.
+              </p>
+            </div>
+
+            {/* Weeks 1-2 */}
+            <div className="border-l-4 border-blue-600 bg-gray-50 p-6 rounded-r-lg">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
+                Weeks 1–2 — Initial Ramp-Up
+              </h3>
+              <p className="text-gray-700 mb-3">
+                Patients begin treatment ramp-up.
+              </p>
+              <p className="text-gray-700">
+                Patients in the stabilization group receive structured behavioral guidance via secure SMS link.
+              </p>
+            </div>
+
+            {/* Weeks 3-6 */}
+            <div className="border-l-4 border-blue-600 bg-gray-50 p-6 rounded-r-lg">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
+                Weeks 3–6 — Stabilization Monitoring
+              </h3>
+              <p className="text-gray-700 mb-3">
+                Clinics submit simple weekly metrics (~5 minutes):
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 mb-3 ml-4">
+                <li>engagement trends</li>
+                <li>refill timing patterns</li>
+                <li>support load indicators</li>
+                <li>early retention signals</li>
+              </ul>
+              <p className="text-gray-600 text-sm">
+                No patient identifiers are submitted. Clinics report simple aggregated counts.
+              </p>
+            </div>
+
+            {/* Week 7 */}
+            <div className="border-l-4 border-blue-600 bg-gray-50 p-6 rounded-r-lg">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
+                Week 7 — Data Consolidation
+              </h3>
+              <p className="text-gray-700">
+                RetentionHealth compiles cohort comparison data and operational trends.
+              </p>
+            </div>
+
+            {/* Week 8 */}
+            <div className="border-l-4 border-blue-600 bg-gray-50 p-6 rounded-r-lg">
+              <h3 className="font-bold text-slate-900 text-xl mb-3">
+                Week 8 — Validation Review
+              </h3>
+              <p className="text-gray-700 mb-3">
+                Clinics receive a full executive summary including:
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-gray-700 mb-3 ml-4">
+                <li>retention comparison</li>
+                <li>estimated revenue preserved</li>
+                <li>operational insights</li>
+              </ul>
+              <p className="text-gray-700">
+                Clinics then decide whether to continue into the full production platform.
               </p>
             </div>
           </div>
@@ -381,7 +522,7 @@ export default function Home() {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-blue-600 mt-1 flex-shrink-0" />
-                <span className="text-gray-800 text-lg">No Business Associate Agreement (BAA) is required</span>
+                <span className="text-gray-800 text-lg">Because the pilot does not collect Protected Health Information (PHI), a Business Associate Agreement (BAA) is not required during pilot participation</span>
               </li>
             </ul>
 
@@ -391,8 +532,8 @@ export default function Home() {
               </p>
             </div>
 
-            <p className="text-base text-gray-600 mt-8 text-center italic">
-              If clinics choose to transition to a full retention system post-validation, HIPAA-compliant infrastructure and BAAs will be executed at that time.
+            <p className="text-base text-gray-600 mt-8 text-center">
+              If the pilot validates measurable retention impact, the full production platform will operate within HIPAA-compliant infrastructure with secure clinic environments and executed BAAs.
             </p>
           </div>
         </div>
@@ -518,6 +659,23 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <div className="h-px bg-gray-200"></div>
+
+      {/* PLATFORM DEVELOPMENT */}
+      <section className="py-16 bg-gradient-to-b from-gray-50 to-white px-4 sm:px-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+            Platform Development
+          </h2>
+          <p className="text-lg text-gray-700 mb-4 text-center">
+            RetentionHealth is engineered and maintained by <strong>Dig Development</strong>, a software studio specializing in secure operational infrastructure and analytics platforms.
+          </p>
+          <p className="text-lg text-gray-700 text-center">
+            The system architecture maintains a clear separation between pilot validation and future HIPAA-compliant deployment.
+          </p>
         </div>
       </section>
 
